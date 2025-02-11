@@ -9,11 +9,12 @@
 using namespace std;
 
 // 덱(deque)은 "double-ended queue"의 약자입니다.
-// - 덱은 양쪽 끝에서 원소의 삽입과 삭제가 가능한 선형 컨테이너입니다.
+// - 덱은 양쪽 끝에서 O(1) 시간에 원소의 삽입과 삭제가 가능한 선형 컨테이너입니다.
 // 좋은 사용 시기:
 // - 양쪽 끝에서의 원소 접근, 삽입, 삭제가 빈번할 때 사용하면 좋습니다.
 // 성능 이슈:
 // - 덱의 중간에서의 원소 삽입 또는 삭제는 O(n)의 시간 복잡도를 가집니다. 중간 위치의 연산이 빈번하면 성능 저하가 발생할 수 있습니다.
+// - 덱은 인덱스를 통한 임의 접근(Random Access)이 가능합니다.
 
 int main() {
     deque<int> dq;
@@ -31,6 +32,9 @@ int main() {
 
     // back: 덱의 마지막 원소 접근, O(1)
     cout << "Back element: " << dq.back() << endl;    // 출력: Back element: 4
+
+    // 임의 접근 예제
+    cout << "dq[2] : " << dq[2] << endl;              // 출력 : dq[2] : 3
 
     // pop_front: 덱의 앞쪽 원소 제거, O(1)
     dq.pop_front();
@@ -52,4 +56,3 @@ int main() {
    
     return 0;
 }
-
